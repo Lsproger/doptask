@@ -51,7 +51,8 @@ int _tmain(int argc, char* argv[])
 				char outMessage[5] = "Echo";
 				cin >> outMessage;
 
-				//Sleep(4000);
+			//	Sleep(5000);
+
 				if ((lobuf = send(cC, outMessage, strlen(outMessage) + 1, NULL)) == SOCKET_ERROR)
 					throw  SetErrorMsgText("send:", WSAGetLastError());
 
@@ -98,7 +99,7 @@ int _tmain(int argc, char* argv[])
 
 
 					cout << "receive:" << message << endl;
-					Sleep(5000);
+				//	Sleep(5000);
 
 				}
 

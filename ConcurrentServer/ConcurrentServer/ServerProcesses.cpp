@@ -80,7 +80,7 @@ namespace {
 
 		lclnt = sizeof(clnt);
 		serv.sin_family = AF_INET;           // используется IP-адресация  
-		serv.sin_port = htons(serverPort);          // порт 2000
+		serv.sin_port = htons(serverPort);          // порт 2001
 		serv.sin_addr.s_addr = INADDR_ANY; //inet_addr("192.168.0.111"); ;   // любой собственный IP-адрес 
 
 		if (bind(sS, (LPSOCKADDR)&serv, sizeof(serv)) == SOCKET_ERROR)
@@ -359,7 +359,7 @@ namespace {
 			DWORD rc = 0;    // код возврата 	
 
 			while (*((TalkersCommand*)pPrm) != EXIT) {
-				//	Sleep(2000);
+				//	Sleep(2001);
 				int listSize = 0;
 				int howMuchClean = 0;
 
@@ -463,7 +463,7 @@ namespace {
 					LeaveCriticalSection(&scListContact);
 
 					//	cout << "marker 3" << endl;
-					//Sleep(2000);
+					//Sleep(2001);
 				}
 			}
 			cout << "shutdown dispatchServer" << endl;
@@ -491,7 +491,7 @@ namespace {
 				throw  SetErrorMsgText("socket:", WSAGetLastError());
 
 			serv.sin_family = AF_INET;           // используется IP-адресация  
-			serv.sin_port = htons(serverPort);          // порт 2000
+			serv.sin_port = htons(serverPort);          // порт 2001
 			serv.sin_addr.s_addr = INADDR_ANY;//inet_addr("192.168.43.78");   // любой собственный IP-адрес 
 
 			if (bind(sSUDP, (LPSOCKADDR)&serv, sizeof(serv)) == SOCKET_ERROR)

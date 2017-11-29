@@ -10,7 +10,7 @@ namespace {
 #define AS_SQUIRT 10
 
 	SOCKET sS;
-	int serverPort = 2000;
+	int serverPort = 2001;
 	char dllName[50] = " ";
 	char namedPipeName[10] = " ";
 

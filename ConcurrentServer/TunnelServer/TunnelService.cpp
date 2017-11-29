@@ -133,7 +133,7 @@ namespace {
 							 //cout << "marker 1" << endl;
 			while (true)     // цикл обработки команд консоли и подключений		
 			{
-				WaitForSingleObject(hClientConnectedEvent, 10000);// ждем пока подключиться клилент
+				WaitForSingleObject(hClientConnectedEvent, INFINITE);// ждем пока подключиться клилент
 																  // т.е. в acceptCycle событие перейдет в сигнальное состояние
 				ResetEvent(hClientConnectedEvent);
 				//	cout << "marker 2" << endl;
@@ -162,55 +162,64 @@ namespace {
 		{
 			Contact *contact = (Contact*)(pPrm);
 			cout << "Tunnel Server started!";
+			cout << "recieved: " << contact->msg << endl;
 			DWORD rc = 0;
 			WSADATA wsaData;
-			//try
-			//{
-			//	if (WSAStartup(MAKEWORD(2, 0), &wsaData) != 0)
-			//		throw  SetErrorMsgText("Startup:", WSAGetLastError());
+			try
+			{
+				if (WSAStartup(MAKEWORD(2, 0), &wsaData) != 0)
+					throw  SetErrorMsgText("Startup:", WSAGetLastError());
 
-			//	SOCKET  cC;                          // серверный сокет
-			//	if ((cC = socket(AF_INET, SOCK_STREAM, NULL)) == INVALID_SOCKET)
-			//		throw  SetErrorMsgText("socket:", WSAGetLastError());
+				SOCKET  cC;                          // серверный сокет
+				if ((cC = socket(AF_INET, SOCK_STREAM, NULL)) == INVALID_SOCKET)
+					throw  SetErrorMsgText("socket:", WSAGetLastError());
 
-			//	SOCKADDR_IN serv;                    // параметры  сокета сервера
-			//	serv.sin_family = AF_INET;           // используется IP-адресация  
-			//	serv.sin_port = htons(2000);                   // TCP-порт 2000
-			//	serv.sin_addr.s_addr = inet_addr("127.0.0.1");  // адрес сервера
-			//	if ((connect(cC, (sockaddr*)&serv, sizeof(serv))) == SOCKET_ERROR)
-			//		throw  SetErrorMsgText("connect:", WSAGetLastError());
+				SOCKADDR_IN serv;                    // параметры  сокета сервера
+				serv.sin_family = AF_INET;           // используется IP-адресация  
+				serv.sin_port = htons(2001);                   // TCP-порт 2000
+				serv.sin_addr.s_addr = inet_addr("127.0.0.1");  // адрес сервера
+				if ((connect(cC, (sockaddr*)&serv, sizeof(serv))) == SOCKET_ERROR)
+					throw  SetErrorMsgText("connect:", WSAGetLastError());
 
-			//	char rclnt[50] = "";
-			//	char sclnt[50] = "";
-			//	char rsrv[50] = "";
-			//	char ssrv[50] = "";
-			//	int rl;
-			//	int sl;
+				char rclnt[50] = "";
+				char sclnt[50] = "";
+				char rsrv[50] = "";
+				char ssrv[50] = "";
+				int rl;
+				int sl;
+				strcpy(rclnt, contact->msg);
 
-			//	for (;;)
-			//	{
-			//		try
-			//		{
-			//			if ((rl = recv(contact->s, rclnt, sizeof(rclnt), NULL)) == SOCKET_ERROR)
-			//				throw SetErrorMsgText("Client recv:", GetLastError());
-			//			if ((sl = send(cC, rclnt, strlen(rclnt) + 1, NULL)) == SOCKET_ERROR)
-			//				throw SetErrorMsgText("Client send:", GetLastError());
-			//			if ((rl = recv(cC, rsrv, sizeof(rsrv), NULL)) == SOCKET_ERROR)
-			//				throw SetErrorMsgText("Server recv:", GetLastError());
-			//			if ((sl = send(contact->s, rsrv, strlen(rsrv) + 1, NULL)) == SOCKET_ERROR)
-			//				throw SetErrorMsgText("Client send:", GetLastError());
-			//		}
-			//		catch (string errMsg) {
-			//			cout << endl << errMsg << endl;
-			//		}
+				for (;;)
+				{
+					try
+					{
+						
+						if ((sl = send(cC, rclnt, strlen(rclnt) + 1, NULL)) == SOCKET_ERROR)
+							throw SetErrorMsgText("Client send:", GetLastError());
+						cout << "sended to server: " << rclnt << endl;
 
-			//	}
+						if ((rl = recv(cC, rclnt, sizeof(rsrv), NULL)) == SOCKET_ERROR)
+							throw SetErrorMsgText("Server recv:", GetLastError());
+						cout << "recv from server:" << rclnt << endl;
 
-			//}
-			//catch (string errMsg)
-			//{
-			//	cout << endl << errMsg << endl;
-			//}
+						if ((sl = send(contact->s, rclnt, strlen(rsrv) + 1, NULL)) == SOCKET_ERROR)
+							throw SetErrorMsgText("Client send:", GetLastError());
+						cout << "sended to client: " << rclnt  << endl;
+
+						if ((rl = recv(contact->s, rclnt, sizeof(rclnt), NULL)) == SOCKET_ERROR)
+							throw SetErrorMsgText("Client recv:", GetLastError());
+						cout << "recv from client: " << rclnt << endl;
+					}
+					catch (string errMsg) {
+						cout << endl << errMsg << endl;
+					}
+				}
+
+			}
+			catch (string errMsg)
+			{
+				cout << endl << errMsg << endl;
+			}
 			ExitThread(rc);
 		}
 

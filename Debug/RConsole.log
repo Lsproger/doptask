@@ -1,11 +1,11 @@
 ﻿  stdafx.cpp
   RConsole.cpp
-d:\учёба\3 курс\1 сем\сети\projects\8 + tunnel\rconsole\rconsole.cpp(35): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+d:\учёба\3 курс\1 сем\сети\projects\doptask\rconsole\rconsole.cpp(35): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\stdio.h(1269): note:  см. объявление "scanf"
-d:\учёба\3 курс\1 сем\сети\projects\8 + tunnel\rconsole\rconsole.cpp(38): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+d:\учёба\3 курс\1 сем\сети\projects\doptask\rconsole\rconsole.cpp(38): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\stdio.h(1769): note:  см. объявление "sprintf"
-d:\учёба\3 курс\1 сем\сети\projects\8 + tunnel\rconsole\rconsole.cpp(28): warning C4101: PipeName: неиспользованная локальная переменная
+d:\учёба\3 курс\1 сем\сети\projects\doptask\rconsole\rconsole.cpp(28): warning C4101: PipeName: неиспользованная локальная переменная
   ErrorFunctions.cpp
   Создание кода...
-  RConsole.vcxproj -> D:\Учёба\3 курс\1 сем\Сети\Projects\8 + tunnel\ConcurrentServer\Debug\RConsole.exe
-  RConsole.vcxproj -> D:\Учёба\3 курс\1 сем\Сети\Projects\8 + tunnel\ConcurrentServer\Debug\RConsole.pdb (Partial PDB)
+  RConsole.vcxproj -> D:\Учёба\3 курс\1 сем\Сети\Projects\doptask\ConcurrentServer\Debug\RConsole.exe
+  RConsole.vcxproj -> D:\Учёба\3 курс\1 сем\Сети\Projects\doptask\ConcurrentServer\Debug\RConsole.pdb (Partial PDB)
