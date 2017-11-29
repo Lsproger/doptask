@@ -191,35 +191,28 @@ namespace {
 
 				for (;;)
 				{
-					try
-					{
-						
-						if ((sl = send(cC, rclnt, strlen(rclnt) + 1, NULL)) == SOCKET_ERROR)
-							throw SetErrorMsgText("Client send:", GetLastError());
-						cout << "sended to server: " << rclnt << endl;
+					if ((sl = send(cC, rclnt, strlen(rclnt) + 1, NULL)) == SOCKET_ERROR)
+						throw SetErrorMsgText("Client send:", GetLastError());
+					cout << "sended to server: " << rclnt << endl;
 
-						if ((rl = recv(cC, rclnt, sizeof(rsrv), NULL)) == SOCKET_ERROR)
-							throw SetErrorMsgText("Server recv:", GetLastError());
-						cout << "recv from server:" << rclnt << endl;
+					if ((rl = recv(cC, rclnt, sizeof(rclnt), NULL)) == SOCKET_ERROR)
+						throw SetErrorMsgText("Server recv:", GetLastError());
+					cout << "recv from server:" << rclnt << endl;
 
-						if ((sl = send(contact->s, rclnt, strlen(rsrv) + 1, NULL)) == SOCKET_ERROR)
-							throw SetErrorMsgText("Client send:", GetLastError());
-						cout << "sended to client: " << rclnt  << endl;
+					if ((sl = send(contact->s, rclnt, strlen(rclnt) + 1, NULL)) == SOCKET_ERROR)
+						throw SetErrorMsgText("Client send:", GetLastError());
+					cout << "sended to client: " << rclnt << endl;
 
-						if ((rl = recv(contact->s, rclnt, sizeof(rclnt), NULL)) == SOCKET_ERROR)
-							throw SetErrorMsgText("Client recv:", GetLastError());
-						cout << "recv from client: " << rclnt << endl;
-					}
-					catch (string errMsg) {
-						cout << endl << errMsg << endl;
-					}
+					if ((rl = recv(contact->s, rclnt, sizeof(rclnt), NULL)) == SOCKET_ERROR)
+						throw SetErrorMsgText("Client recv:", GetLastError());
+					cout << "recv from client: " << rclnt << endl;
 				}
-
 			}
 			catch (string errMsg)
 			{
 				cout << endl << errMsg << endl;
 			}
+			cout << "thread closed!\n";
 			ExitThread(rc);
 		}
 

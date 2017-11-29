@@ -42,13 +42,13 @@ int _tmain(int argc, char* argv[])
 					throw  SetErrorMsgText("connect:", WSAGetLastError());
 				//..............................................................
 
-				char message[50],                     //буфер ввода 
-					obuf[50]; /*= "sever: принято ";  //буфер вывода*/
+				char message[50] = "a";                     //буфер ввода 
+					char	obuf[50]; /*= "sever: принято ";  //буфер вывода*/
 				int  libuf = 0,                    //количество принятых байт
 					lobuf = 0;                    //количество отправленных байь 
 
 				cout << "Enter service type\n";
-				char outMessage[5] = "Echo";
+				char outMessage[50] = "Echo";
 				cin >> outMessage;
 
 			//	Sleep(5000);
@@ -56,35 +56,38 @@ int _tmain(int argc, char* argv[])
 				if ((lobuf = send(cC, outMessage, strlen(outMessage) + 1, NULL)) == SOCKET_ERROR)
 					throw  SetErrorMsgText("send:", WSAGetLastError());
 
-
 				cout << "seneded: " << outMessage << endl;
 				if (!strcmp(outMessage, "Echo")) {
 
-					if ((libuf = recv(cC, message, sizeof(message), NULL)) == SOCKET_ERROR)
+					if ((libuf = recv(cC, outMessage, sizeof(outMessage), NULL)) == SOCKET_ERROR)
 						throw  SetErrorMsgText("recv:", WSAGetLastError());//ожидение сообщения*
 
-					if (strcmp(message, "TimeOUT") == 0) {
+					if (strcmp(outMessage, "TimeOUT") == 0) {
 						cout << "time out" << endl;
-						return -1;
+						break;
 					}
 					for (;;) {
-
+						bool stop = false;
 						cout << "Enter string:\n";
 						cin >> outMessage;
-						if (atoi(outMessage) == 1) strcpy(outMessage, "");
+						if (atoi(outMessage) == 1) {
+							strcpy(outMessage, "");
+							stop = true;
+						}
 						if ((lobuf = send(cC, outMessage, strlen(outMessage) + 1, NULL)) == SOCKET_ERROR)
 							throw  SetErrorMsgText("send:", WSAGetLastError());
 						cout << "send:" << outMessage << endl;
 						//Sleep(1000);
-						if ((libuf = recv(cC, message, sizeof(message), NULL)) == SOCKET_ERROR)
+						if (stop) break;
+						if ((libuf = recv(cC, outMessage, sizeof(outMessage), NULL)) == SOCKET_ERROR)
 							throw  SetErrorMsgText("recv:", WSAGetLastError());//ожидение сообщения*
 					//	cout << SetErrorMsgText<<endl;
-						if (strcmp(message, "TimeOUT") == 0) {
+						if (strcmp(outMessage, "TimeOUT") == 0) {
 							cout << "time out" << endl;
-							return -1;
+							break;
 						}
 
-						cout << "receive:" << message << endl;
+						cout << "receive:" << outMessage << endl;
 
 
 					}
@@ -92,34 +95,32 @@ int _tmain(int argc, char* argv[])
 				else if (!strcmp(outMessage, "Time")) {
 
 
-					if ((libuf = recv(cC, message, sizeof(message), NULL)) == SOCKET_ERROR)
+					if ((libuf = recv(cC, outMessage, sizeof(outMessage), NULL)) == SOCKET_ERROR)
 						throw  SetErrorMsgText("recv:", WSAGetLastError());//ожидение сообщения*
-
-
-
-
-					cout << "receive:" << message << endl;
+					cout << "receive:" << outMessage << endl;
+					send(cC, "", strlen("") + 1, NULL);
 				//	Sleep(5000);
 
 				}
 
 				else if (!strcmp(outMessage, "Rand")) {
 
-					if ((libuf = recv(cC, message, sizeof(message), NULL)) == SOCKET_ERROR)
+					if ((libuf = recv(cC, outMessage, sizeof(outMessage), NULL)) == SOCKET_ERROR)
 						throw  SetErrorMsgText("recv:", WSAGetLastError());//ожидение сообщения*
 
 					if (strcmp(outMessage, "TimeOUT") == 0) {
 						cout << "time out" << endl;
 						return -1;
 					}
-					cout << "recv random message:" << message << endl;
+					cout << "recv random message:" << outMessage << endl;
+					send(cC, "", strlen("") + 1, NULL);
 
 				}
 				else if (strcmp(outMessage, "Echo") != 0 && strcmp(outMessage, "Time") && strcmp(outMessage, "Rand")) {
-					if ((libuf = recv(cC, message, sizeof(message), NULL)) == SOCKET_ERROR)
+					if ((libuf = recv(cC, outMessage, sizeof(outMessage), NULL)) == SOCKET_ERROR)
 						throw  SetErrorMsgText("recv:", WSAGetLastError());//ожидение сообщения*
 
-					cout << "receive:" << message << endl;
+					cout << "receive:" << outMessage << endl;
 				}
 
 				if (closesocket(cS) == SOCKET_ERROR)
@@ -137,6 +138,6 @@ int _tmain(int argc, char* argv[])
 			}
 		}
 	}
-	system("pause");
+	//system("pause");
 	return 0;
 }

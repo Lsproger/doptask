@@ -1,5 +1,4 @@
-﻿  stdafx.cpp
-  TunnelService.cpp
+﻿  TunnelService.cpp
 d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.h(46): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(129): note:  см. объявление "strcpy"
 d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.h(53): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -11,28 +10,21 @@ d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tun
   c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1828): note:  см. объявление "inet_addr"
 d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(190): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(129): note:  см. объявление "strcpy"
-d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(241): warning C4297: `anonymous-namespace'::ResponseServer: ожидается, что функция не будет выдавать исключения, но она это делает
-  d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(241): note: Функция типа extern "C", указан параметр /EHc
+d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(234): warning C4297: `anonymous-namespace'::ResponseServer: ожидается, что функция не будет выдавать исключения, но она это делает
+  d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(234): note: Функция типа extern "C", указан параметр /EHc
+d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(237): warning C4297: `anonymous-namespace'::ResponseServer: ожидается, что функция не будет выдавать исключения, но она это делает
+  d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(237): note: Функция типа extern "C", указан параметр /EHc
 d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(244): warning C4297: `anonymous-namespace'::ResponseServer: ожидается, что функция не будет выдавать исключения, но она это делает
   d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(244): note: Функция типа extern "C", указан параметр /EHc
-d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(251): warning C4297: `anonymous-namespace'::ResponseServer: ожидается, что функция не будет выдавать исключения, но она это делает
-  d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(251): note: Функция типа extern "C", указан параметр /EHc
-d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(274): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(267): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
   c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1846): note:  см. объявление "inet_ntoa"
-d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(284): warning C4297: `anonymous-namespace'::ResponseServer: ожидается, что функция не будет выдавать исключения, но она это делает
-  d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(284): note: Функция типа extern "C", указан параметр /EHc
-d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(286): warning C4297: `anonymous-namespace'::ResponseServer: ожидается, что функция не будет выдавать исключения, но она это делает
-  d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(286): note: Функция типа extern "C", указан параметр /EHc
-d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(264): warning C4101: name: неиспользованная локальная переменная
-d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(235): warning C4101: message: неиспользованная локальная переменная
-d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(261): warning C4101: ibuf: неиспользованная локальная переменная
-d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(234): warning C4101: lclnt: неиспользованная локальная переменная
-  TunnelServer.cpp
-d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.h(46): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(129): note:  см. объявление "strcpy"
-d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.h(53): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(129): note:  см. объявление "strcpy"
-  ErrorFunctions.cpp
-  Создание кода...
+d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(277): warning C4297: `anonymous-namespace'::ResponseServer: ожидается, что функция не будет выдавать исключения, но она это делает
+  d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(277): note: Функция типа extern "C", указан параметр /EHc
+d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(279): warning C4297: `anonymous-namespace'::ResponseServer: ожидается, что функция не будет выдавать исключения, но она это делает
+  d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(279): note: Функция типа extern "C", указан параметр /EHc
+d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(257): warning C4101: name: неиспользованная локальная переменная
+d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(228): warning C4101: message: неиспользованная локальная переменная
+d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(254): warning C4101: ibuf: неиспользованная локальная переменная
+d:\учёба\3 курс\1 сем\сети\projects\doptask\concurrentserver\tunnelserver\tunnelservice.cpp(227): warning C4101: lclnt: неиспользованная локальная переменная
   TunnelServer.vcxproj -> D:\Учёба\3 курс\1 сем\Сети\Projects\doptask\ConcurrentServer\Debug\TunnelServer.exe
   TunnelServer.vcxproj -> D:\Учёба\3 курс\1 сем\Сети\Projects\doptask\ConcurrentServer\Debug\TunnelServer.pdb (Partial PDB)
