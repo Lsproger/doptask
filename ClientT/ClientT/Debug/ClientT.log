@@ -1,0 +1,12 @@
+﻿  stdafx.cpp
+  ErrorFunctions.cpp
+d:\учёба\3 курс\1 сем\сети\projects\8\clientt\clientt\errorfunctions.cpp(85): warning C4101: obuf: неиспользованная локальная переменная
+  ClientT.cpp
+d:\учёба\3 курс\1 сем\сети\projects\8\clientt\clientt\clientt.cpp(40): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\um\winsock2.h(1828): note:  см. объявление "inet_addr"
+d:\учёба\3 курс\1 сем\сети\projects\8\clientt\clientt\clientt.cpp(123): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(129): note:  см. объявление "strcpy"
+d:\учёба\3 курс\1 сем\сети\projects\8\clientt\clientt\clientt.cpp(46): warning C4101: obuf: неиспользованная локальная переменная
+  Создание кода...
+  ClientT.vcxproj -> D:\Учёба\3 курс\1 сем\Сети\Projects\8\ConcurrentServer\Debug\ClientT.exe
+  ClientT.vcxproj -> D:\Учёба\3 курс\1 сем\Сети\Projects\8\ConcurrentServer\Debug\ClientT.pdb (Partial PDB)

@@ -1,0 +1,34 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.h(35): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(129): note:  см. объявление "strcpy"
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.h(36): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(129): note:  см. объявление "strcpy"
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.h(42): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(129): note:  см. объявление "strcpy"
+  ServiceLibrary.cpp
+  Service.cpp
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.h(35): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(129): note:  см. объявление "strcpy"
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.h(36): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(129): note:  см. объявление "strcpy"
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.h(42): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(129): note:  см. объявление "strcpy"
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.cpp(8): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\time.h(505): note:  см. объявление "localtime"
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.cpp(100): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(129): note:  см. объявление "strcpy"
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.cpp(102): warning C4297: `anonymous-namespace'::TimeServer: ожидается, что функция не будет выдавать исключения, но она это делает
+  d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.cpp(102): note: Функция типа extern "C", указан параметр /EHc
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.cpp(96): warning C4101: libuf: неиспользованная локальная переменная
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.cpp(120): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.cpp(123): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\stdlib.h(1323): note:  см. объявление "itoa"
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.cpp(126): warning C4297: `anonymous-namespace'::RandServer: ожидается, что функция не будет выдавать исключения, но она это делает
+  d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.cpp(126): note: Функция типа extern "C", указан параметр /EHc
+d:\учёба\3 курс\1 сем\сети\projects\8\servicelibrary\servicelibrary\service.cpp(121): warning C4101: libuf: неиспользованная локальная переменная
+  ErrorFunctions.cpp
+  Создание кода...
+     Создается библиотека D:\Учёба\3 курс\1 сем\Сети\Projects\8\ConcurrentServer\Debug\ServiceLibrary.lib и объект D:\Учёба\3 курс\1 сем\Сети\Projects\8\ConcurrentServer\Debug\ServiceLibrary.exp
+  ServiceLibrary.vcxproj -> D:\Учёба\3 курс\1 сем\Сети\Projects\8\ConcurrentServer\Debug\ServiceLibrary.dll
+  ServiceLibrary.vcxproj -> D:\Учёба\3 курс\1 сем\Сети\Projects\8\ConcurrentServer\Debug\ServiceLibrary.pdb (Partial PDB)
