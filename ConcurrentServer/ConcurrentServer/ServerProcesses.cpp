@@ -80,7 +80,7 @@ namespace {
 
 		lclnt = sizeof(clnt);
 		serv.sin_family = AF_INET;           // используется IP-адресация  
-		serv.sin_port = htons(serverPort);          // порт 2001
+		serv.sin_port = htons(serverPort);          // порт 2000
 		serv.sin_addr.s_addr = INADDR_ANY; //inet_addr("192.168.0.111"); ;   // любой собственный IP-адрес 
 
 		if (bind(sS, (LPSOCKADDR)&serv, sizeof(serv)) == SOCKET_ERROR)
@@ -277,8 +277,9 @@ namespace {
 				cout << endl << ErrorPipeText;
 			}
 			while (*((TalkersCommand*)pPrm) != EXIT) {
-				cout << "enter to named pipe" << endl;
-				ConnectNamedPipe(hPipe, NULL);
+				
+				if(ConnectNamedPipe(hPipe, NULL))
+					cout << "enter to named pipe" << endl;
 				for (;;) {
 					bool check = ReadFile
 					(
@@ -291,7 +292,7 @@ namespace {
 					if (check == FALSE) break;
 					cout << "Сообщение от клиента:  " << rbuf << endl;
 					int cmd = atoi(rbuf);
-					if (cmd > 0 && cmd < 6)
+					if (cmd >= 0 && cmd < 6)
 						*((TalkersCommand*)pPrm) = (TalkersCommand)cmd;
 					if (cmd == 3)
 					{
@@ -359,7 +360,7 @@ namespace {
 			DWORD rc = 0;    // код возврата 	
 
 			while (*((TalkersCommand*)pPrm) != EXIT) {
-				//	Sleep(2001);
+				//	Sleep(2000);
 				int listSize = 0;
 				int howMuchClean = 0;
 
@@ -463,7 +464,7 @@ namespace {
 					LeaveCriticalSection(&scListContact);
 
 					//	cout << "marker 3" << endl;
-					//Sleep(2001);
+					//Sleep(2000);
 				}
 			}
 			cout << "shutdown dispatchServer" << endl;
@@ -491,7 +492,7 @@ namespace {
 				throw  SetErrorMsgText("socket:", WSAGetLastError());
 
 			serv.sin_family = AF_INET;           // используется IP-адресация  
-			serv.sin_port = htons(serverPort);          // порт 2001
+			serv.sin_port = htons(serverPort);          // порт 2000
 			serv.sin_addr.s_addr = INADDR_ANY;//inet_addr("192.168.43.78");   // любой собственный IP-адрес 
 
 			if (bind(sSUDP, (LPSOCKADDR)&serv, sizeof(serv)) == SOCKET_ERROR)

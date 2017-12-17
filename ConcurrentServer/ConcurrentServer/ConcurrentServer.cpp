@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 		strcpy(namedPipeName, argv[3]);
 		break;
 	default:
-		pt = 2001;
+		pt = 2000;
 		strcpy(dllN, "ServiceLibrary.dll");
 		strcpy(npName, "BOX");
 		break;
